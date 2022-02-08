@@ -32,7 +32,7 @@ export default function Form(props) {
                     required 
                 />
                 <label htmlFor="store">Store:</label>
-                <input 
+                <input
                     type="text" 
                     name="store" 
                     placeholder="Where was it bought?" 
