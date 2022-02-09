@@ -3,7 +3,7 @@ import React from 'react'
 export default function Form(props) {
     return (
         <div>
-            <form>
+            <form onSubmit={props.addTableData}>
                 <label htmlFor="expense">Expense:</label>
                 <input 
                     type="text" 
@@ -39,7 +39,7 @@ export default function Form(props) {
                     value={props.formData.store}
                     onChange={props.handleFormChange}
                 />
-                <button type="submit">Add Expense</button>
+                <button onChange={props.addTableData}>Add Expense</button>
             </form>
         </div>
     )

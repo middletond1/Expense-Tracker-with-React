@@ -1,7 +1,16 @@
 import React from 'react'
 
 export default function ExpenseTable(props) {
-    const tableElements = 
+    const tableElements = props.tableData.map(item => (
+            <tr>
+                <td>{item.expense}</td>
+                <td>{item.amount}</td>
+                <td>{item.date}</td>
+                <td>{item.store}</td>
+            </tr>
+        )
+    )
+
     return (
         <table id="expensetable">
             <thead>
@@ -13,6 +22,9 @@ export default function ExpenseTable(props) {
                     <th>Remove</th>
                 </tr>
             </thead>
+            <tbody>
+                {tableElements}
+            </tbody>
         </table>
     )
 }

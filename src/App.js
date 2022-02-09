@@ -7,9 +7,7 @@ export default function App() {
         {expense: "", amount: "", date: "", store: ""}
     );
 
-    const [tableData, setTableData] = React.useState(
-        []
-    )
+    const [tableData, setTableData] = React.useState([])
 
     function handleFormChange(event) {
         setFormData(prevFormData => {
@@ -21,7 +19,19 @@ export default function App() {
         })
     }
 
-    function addTableData() {
+    function resetFormData() {
+        setFormData(() => {
+            return {
+                expense: "", 
+                amount: "", 
+                date: "", 
+                store: ""
+            }     
+        })
+    }
+
+    function addTableData(event) {
+        event.preventDefault();
         setTableData(prevTableData => {
             return [
                 ...prevTableData,
@@ -33,17 +43,22 @@ export default function App() {
                 }
             ]
         })
+        resetFormData()
     }
 
     console.log(formData)
-
+    console.log(tableData)
+    
     return (
         <div>
             <Form 
                 handleFormChange={handleFormChange}
                 formData={formData}
+                addTableData={addTableData}
             />
-            <ExpenseTable />
+            <ExpenseTable 
+                tableData={tableData}
+            />
         </div>
     )
 }
