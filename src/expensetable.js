@@ -7,7 +7,7 @@ export default function ExpenseTable(props) {
                 <td>{item.amount}</td>
                 <td>{item.date}</td>
                 <td>{item.store}</td>
-                <td><button>Delete</button></td>
+                <td><button id={item.id} onClick={props.removeTableData}>Delete</button></td>
             </tr>
         )
     )

@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './form';
 import ExpenseTable from './expensetable';
+import { nanoid } from 'nanoid';
 
 export default function App() {
     const [formData, setFormData] = React.useState(
@@ -36,6 +37,7 @@ export default function App() {
             return [
                 ...prevTableData,
                 {
+                    id: nanoid(),
                     expense: formData.expense,
                     amount: formData.amount,
                     date: formData.date,
@@ -46,8 +48,8 @@ export default function App() {
         resetFormData()
     }
 
-    function removeTableData() {
-        
+    function removeTableData(event) {
+        setTableData(prevTableData => prevTableData.filter(item => item.id != event.target.id))
     }
 
     console.log(formData)
@@ -62,6 +64,7 @@ export default function App() {
             />
             <ExpenseTable 
                 tableData={tableData}
+                removeTableData={removeTableData}
             />
         </div>
     )
