@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function ExpenseTable() {
+export default function ExpenseTable(props) {
+    const tableElements = 
     return (
         <table id="expensetable">
             <thead>

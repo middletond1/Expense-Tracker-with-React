@@ -7,6 +7,10 @@ export default function App() {
         {expense: "", amount: "", date: "", store: ""}
     );
 
+    const [tableData, setTableData] = React.useState(
+        []
+    )
+
     function handleFormChange(event) {
         setFormData(prevFormData => {
             const { name, value } = event.target
@@ -14,6 +18,20 @@ export default function App() {
                 ...prevFormData,
                 [name]: value
             }
+        })
+    }
+
+    function addTableData() {
+        setTableData(prevTableData => {
+            return [
+                ...prevTableData,
+                {
+                    expense: formData.expense,
+                    amount: formData.amount,
+                    date: formData.date,
+                    store: formData.store
+                }
+            ]
         })
     }
 
