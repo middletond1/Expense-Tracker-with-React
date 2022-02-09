@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ExpenseTable(props) {
     const tableElements = props.tableData.map(item => (
-            <tr>
+            <tr key={item.id}>
                 <td>{item.expense}</td>
                 <td>{item.amount}</td>
                 <td>{item.date}</td>
