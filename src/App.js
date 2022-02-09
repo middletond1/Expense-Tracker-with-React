@@ -46,6 +46,10 @@ export default function App() {
         resetFormData()
     }
 
+    function removeTableData() {
+        
+    }
+
     console.log(formData)
     console.log(tableData)
     
