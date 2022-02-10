@@ -8,7 +8,7 @@ export default function App() {
         {expense: "", amount: "", date: "", store: ""}
     );
 
-    const [tableData, setTableData] = React.useState([])
+    const [tableData, setTableData] = React.useState(JSON.parse(localStorage.getItem('tabledata')) || [])
 
     function handleFormChange(event) {
         setFormData(prevFormData => {
@@ -51,6 +51,8 @@ export default function App() {
     function removeTableData(event) {
         setTableData(prevTableData => prevTableData.filter(item => item.id != event.target.id))
     }
+
+    React.useEffect(() => localStorage.setItem('tabledata', JSON.stringify(tableData)), [tableData])
 
     console.log(formData)
     console.log(tableData)
