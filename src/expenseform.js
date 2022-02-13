@@ -1,9 +1,10 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 export default function ExpenseForm(props) {
     return (
-        <div className='container'>
+        <div className='container mt-5'>
             <Form onSubmit={props.addTableData}>
                 <Form.Group className="mb-3" controlId='expense'>
                     <Form.Label>Expense:</Form.Label>
@@ -48,7 +49,7 @@ export default function ExpenseForm(props) {
                         onChange={props.handleFormChange}
                     />
                 </Form.Group>
-                <button onChange={props.addTableData}>Add Expense</button>
+                <Button className="mb-5" onClick={props.addTableData} type="submit">Add Expense</Button>
             </Form>
         </div>
     )
