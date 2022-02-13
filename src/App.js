@@ -3,6 +3,7 @@ import Form from './form';
 import ExpenseTable from './expensetable';
 import { nanoid } from 'nanoid';
 
+
 export default function App() {
     const [formData, setFormData] = React.useState(
         {expense: "", amount: "", date: "", store: ""}
@@ -58,7 +59,7 @@ export default function App() {
     console.log(tableData)
     
     return (
-        <div>
+        <div className='container'>
             <Form 
                 handleFormChange={handleFormChange}
                 formData={formData}
