@@ -1,5 +1,5 @@
 import React from 'react';
-import ExpenseForm from './form';
+import ExpenseForm from './expenseform';
 import ExpenseTable from './expensetable';
 import { nanoid } from 'nanoid';
 
