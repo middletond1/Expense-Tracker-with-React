@@ -3,9 +3,21 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 export default function ExpenseForm(props) {
+    const [validated, setValidated] = React.useState(false);
+
+    const handleSubmit = (event) => {
+        if (event.target.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        event.preventDefault();
+        setValidated(true);
+        props.addTableData();
+    };
+
     return (
         <div className='container mt-5'>
-            <Form onSubmit={props.addTableData}>
+            <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId='expense'>
                     <Form.Label>Expense:</Form.Label>
                     <Form.Control
@@ -16,6 +28,9 @@ export default function ExpenseForm(props) {
                         onChange={props.handleFormChange}
                         required 
                     />
+                    <Form.Control.Feedback type="invalid">
+                        Please include the item.
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId='amount'>
                     <Form.Label>Amount:</Form.Label>
@@ -28,6 +43,9 @@ export default function ExpenseForm(props) {
                         onChange={props.handleFormChange}
                         required 
                     />
+                    <Form.Control.Feedback type="invalid">
+                        Please include a cost.
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId='date'>
                     <Form.Label>Date:</Form.Label>
@@ -38,6 +56,9 @@ export default function ExpenseForm(props) {
                         onChange={props.handleFormChange}
                         required 
                     />
+                    <Form.Control.Feedback type="invalid">
+                        Please include the date of purchase.
+                    </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId='store'>
                     <Form.Label>Store:</Form.Label>
@@ -49,7 +70,7 @@ export default function ExpenseForm(props) {
                         onChange={props.handleFormChange}
                     />
                 </Form.Group>
-                <Button className="mb-5" onClick={props.addTableData} type="submit">Add Expense</Button>
+                <Button className="mb-5" type="submit">Add Expense</Button>
             </Form>
         </div>
     )

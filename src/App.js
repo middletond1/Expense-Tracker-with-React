@@ -32,8 +32,7 @@ export default function App() {
         })
     }
 
-    function addTableData(event) {
-        event.preventDefault();
+    function addTableData() {
         setTableData(prevTableData => {
             return [
                 ...prevTableData,
