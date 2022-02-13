@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './form';
+import ExpenseForm from './form';
 import ExpenseTable from './expensetable';
 import { nanoid } from 'nanoid';
 
@@ -60,7 +60,7 @@ export default function App() {
     
     return (
         <div className='container'>
-            <Form 
+            <ExpenseForm 
                 handleFormChange={handleFormChange}
                 formData={formData}
                 addTableData={addTableData}
