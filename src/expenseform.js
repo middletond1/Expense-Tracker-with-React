@@ -6,11 +6,10 @@ export default function ExpenseForm(props) {
     const [validated, setValidated] = React.useState(false);
 
     const handleSubmit = (event) => {
-        if (event.target.checkValidity() === false) {
+        if (event.currentTarget.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
         }
-        event.preventDefault();
         setValidated(true);
         props.addTableData();
     };

@@ -33,6 +33,9 @@ export default function App() {
     }
 
     function addTableData() {
+        if (!formData.expense || !formData.amount || !formData.date) {
+            return
+        }
         setTableData(prevTableData => {
             return [
                 ...prevTableData,
