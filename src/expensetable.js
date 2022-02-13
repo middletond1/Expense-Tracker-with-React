@@ -16,7 +16,7 @@ export default function ExpenseTable(props) {
     return (
         <div className='container'>
             <Table striped hover bordered id="expensetable">
-                <thead>
+                <thead className='table-success'>
                     <tr>
                         <th>Expense</th>
                         <th>Amount</th>
