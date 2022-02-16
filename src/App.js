@@ -58,7 +58,8 @@ export default function App() {
     React.useEffect(() => localStorage.setItem('tabledata', JSON.stringify(tableData)), [tableData])
     
     return (
-        <div className='container'>
+        <div className='container mt-5'>
+            <h1 className='text-center'>Expense Tracker with React</h1>
             <ExpenseForm 
                 handleFormChange={handleFormChange}
                 formData={formData}
