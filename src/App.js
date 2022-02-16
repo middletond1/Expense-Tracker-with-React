@@ -56,8 +56,6 @@ export default function App() {
     }
 
     React.useEffect(() => localStorage.setItem('tabledata', JSON.stringify(tableData)), [tableData])
-
-    console.log(tableData)
     
     return (
         <div className='container'>
