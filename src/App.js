@@ -11,6 +11,12 @@ export default function App() {
 
     const [tableData, setTableData] = React.useState(JSON.parse(localStorage.getItem('tabledata')) || [])
 
+    const [darkMode, setDarkMode] = React.useState(false)
+
+    function changeToDarkMode() {
+        setDarkMode([prevDarkMode => !prevDarkMode])
+    }
+
     function handleFormChange(event) {
         setFormData(prevFormData => {
             const { name, value } = event.target
