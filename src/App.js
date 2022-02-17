@@ -67,18 +67,22 @@ export default function App() {
     console.log(darkMode)
 
     return (
-        <div className='container mt-5'>
-            <Button onClick={changeToDarkMode}>Dark Mode</Button>
-            <h1 className='text-center'>Expense Tracker with React</h1>
-            <ExpenseForm 
-                handleFormChange={handleFormChange}
-                formData={formData}
-                addTableData={addTableData}
-            />
-            <ExpenseTable 
-                tableData={tableData}
-                removeTableData={removeTableData}
-            />
+        <div className={`w-100 h-100 ${darkMode ? 'dark' : ''}`}>
+            <div className={`container`}>
+                <Button onClick={changeToDarkMode}>Dark Mode</Button>
+                <h1 className={`text-center`}>Expense Tracker with React</h1>
+                <ExpenseForm 
+                    handleFormChange={handleFormChange}
+                    formData={formData}
+                    addTableData={addTableData}
+                    darkMode={darkMode}
+                />
+                <ExpenseTable 
+                    tableData={tableData}
+                    removeTableData={removeTableData}
+                    darkMode={darkMode}
+                />
+            </div>
         </div>
     )
 }

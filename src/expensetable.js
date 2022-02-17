@@ -49,7 +49,7 @@ export default function ExpenseTable(props) {
     return (
         <div className='container'>
             <Table striped hover bordered id="expensetable">
-                <thead className='table-success'>
+                <thead className={`${props.darkMode ? 'table-light' : 'table-success'}`}>
                     <tr>
                         <th>Expense</th>
                         <th>Amount</th>
