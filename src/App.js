@@ -2,6 +2,7 @@ import React from 'react';
 import ExpenseForm from './expenseform';
 import ExpenseTable from './expensetable';
 import { nanoid } from 'nanoid';
+import Button from 'react-bootstrap/Button'
 
 
 export default function App() {
@@ -67,7 +68,7 @@ export default function App() {
 
     return (
         <div className='container mt-5'>
-            <button>Dark Mode</button>
+            <Button>Dark Mode</Button>
             <h1 className='text-center'>Expense Tracker with React</h1>
             <ExpenseForm 
                 handleFormChange={handleFormChange}
