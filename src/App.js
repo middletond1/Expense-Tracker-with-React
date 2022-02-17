@@ -12,7 +12,7 @@ export default function App() {
 
     const [tableData, setTableData] = React.useState(JSON.parse(localStorage.getItem('tabledata')) || [])
 
-    const [darkMode, setDarkMode] = React.useState(false)
+    const [darkMode, setDarkMode] = React.useState(JSON.parse(localStorage.getItem('darkMode')) || false)
 
     function changeToDarkMode() {
         setDarkMode(prevDarkMode => !prevDarkMode)
@@ -63,19 +63,18 @@ export default function App() {
     }
 
     React.useEffect(() => localStorage.setItem('tabledata', JSON.stringify(tableData)), [tableData])
-    
-    console.log(darkMode)
+
+    React.useEffect(() => localStorage.setItem('darkMode', JSON.stringify(darkMode)), [darkMode])
 
     return (
-        <div className={`w-100 h-100 ${darkMode ? 'dark' : ''}`}>
+        <div className={`fullscreen ${darkMode ? 'dark' : ''}`}>
+            <Button onClick={changeToDarkMode}>Dark Mode</Button>
             <div className={`container`}>
-                <Button onClick={changeToDarkMode}>Dark Mode</Button>
                 <h1 className={`text-center`}>Expense Tracker with React</h1>
                 <ExpenseForm 
                     handleFormChange={handleFormChange}
                     formData={formData}
                     addTableData={addTableData}
-                    darkMode={darkMode}
                 />
                 <ExpenseTable 
                     tableData={tableData}

@@ -48,20 +48,36 @@ export default function ExpenseTable(props) {
 
     return (
         <div className='container'>
-            <Table striped hover bordered id="expensetable">
-                <thead className={`${props.darkMode ? 'table-light' : 'table-success'}`}>
-                    <tr>
-                        <th>Expense</th>
-                        <th>Amount</th>
-                        <th>Date</th>
-                        <th>Store</th>
-                        <th>Remove</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {tableElements}
-                </tbody>
-            </Table>
+            {props.darkMode ? 
+                <Table variant="dark" striped hover bordered id="expensetable">
+                    <thead className={`${props.darkMode ? 'table-light' : 'table-success'}`}>
+                        <tr>
+                            <th>Expense</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Store</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tableElements}
+                    </tbody>
+                </Table>
+            : 
+                <Table striped hover bordered id="expensetable">
+                    <thead className={`${props.darkMode ? 'table-light' : 'table-success'}`}>
+                        <tr>
+                            <th>Expense</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Store</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tableElements}
+                    </tbody>
+                </Table>}
         </div>
     )
 }
