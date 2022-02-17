@@ -64,11 +64,11 @@ export default function App() {
 
     React.useEffect(() => localStorage.setItem('tabledata', JSON.stringify(tableData)), [tableData])
     
-    console.log(tableData)
+    console.log(darkMode)
 
     return (
         <div className='container mt-5'>
-            <Button>Dark Mode</Button>
+            <Button onClick={changeToDarkMode}>Dark Mode</Button>
             <h1 className='text-center'>Expense Tracker with React</h1>
             <ExpenseForm 
                 handleFormChange={handleFormChange}
