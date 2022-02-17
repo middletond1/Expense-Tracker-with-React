@@ -15,7 +15,7 @@ export default function App() {
     const [darkMode, setDarkMode] = React.useState(false)
 
     function changeToDarkMode() {
-        setDarkMode([prevDarkMode => !prevDarkMode])
+        setDarkMode(prevDarkMode => !prevDarkMode)
     }
 
     function handleFormChange(event) {
