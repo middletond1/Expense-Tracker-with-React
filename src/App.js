@@ -67,6 +67,7 @@ export default function App() {
 
     return (
         <div className='container mt-5'>
+            <button>Dark Mode</button>
             <h1 className='text-center'>Expense Tracker with React</h1>
             <ExpenseForm 
                 handleFormChange={handleFormChange}
