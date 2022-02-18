@@ -28,17 +28,6 @@ export default function App() {
         })
     }
 
-    function resetFormData() {
-        setFormData(() => {
-            return {
-                expense: "", 
-                amount: "", 
-                date: "", 
-                store: ""
-            }     
-        })
-    }
-
     function addTableData() {
         if (!formData.expense || !formData.amount || !formData.date) {
             return
@@ -55,7 +44,6 @@ export default function App() {
                 }
             ]
         })
-        resetFormData()
     }
 
     function removeTableData(event) {
