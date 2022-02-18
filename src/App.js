@@ -67,7 +67,7 @@ export default function App() {
     React.useEffect(() => localStorage.setItem('darkMode', JSON.stringify(darkMode)), [darkMode])
 
     return (
-        <div className={`fullscreen ${darkMode ? 'dark' : ''}`}>
+        <div className={`${darkMode ? 'dark' : ''}`}>
             <Button onClick={changeToDarkMode}>Dark Mode</Button>
             <div className={`container`}>
                 <h1 className={`text-center`}>Expense Tracker with React</h1>
