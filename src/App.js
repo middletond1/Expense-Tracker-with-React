@@ -66,6 +66,8 @@ export default function App() {
 
     React.useEffect(() => localStorage.setItem('darkMode', JSON.stringify(darkMode)), [darkMode])
 
+    React.useEffect(() => darkMode ? document.body.style = 'background-color: rgb(36, 35, 37);' : document.body.style = '', [darkMode])
+
     return (
         <div className={`${darkMode ? 'dark' : ''}`}>
             <Button onClick={changeToDarkMode}>Dark Mode</Button>
